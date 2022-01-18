@@ -1,20 +1,12 @@
-import Koa from 'koa';
-import Router from '@koa/router';
-import bodyParser from 'koa-bodyparser';
-import routes from './routes';
+import app from './app';
 import { PORT } from './config';
 
-const app = new Koa();
-const router = new Router();
-
-routes.forEach((route) => router[route.method](route.path, route.action));
-
-app.use(bodyParser());
-app.use(router.routes());
-app.use(router.allowedMethods());
-
-app.listen(PORT, () => {
-  console.log(`🚀  Server ready at http://localhost:${PORT}`);
+/**
+ * Start Express server.
+ */
+const server = app.listen(process.env.PORT, () => {
+  console.log(`🚀 Server ready at http://localhost:${PORT}`);
+  console.log('Press CTRL-C to stop\n');
 });
 
-export default app;
+export default server;
