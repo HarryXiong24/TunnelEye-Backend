@@ -6,6 +6,9 @@ import compress from 'koa-compress';
 import KoaStatic from 'koa-static';
 import logger from 'koa-logger';
 import json from 'koa-json';
+// token
+import jwt from 'koa-jwt';
+import { secretKey, verifyToken, whiteList } from './utils/token';
 // SQL
 import options from './sql/config';
 import connect from './sql/connect';
@@ -29,6 +32,16 @@ app.use(KoaStatic(__dirname + '/public'));
 
 // SQL
 connect(options);
+
+// 这个中间件要放在'koa-jwt'的前面
+app.use(verifyToken);
+// koa-jwt 中间件会获取前端请求中的token, 进行检验
+app.use(
+  jwt({
+    secret: secretKey,
+    // 不需要 token 验证的白名单
+  }).unless({ path: whiteList })
+);
 
 app.use(router.routes());
 app.use(router.allowedMethods());

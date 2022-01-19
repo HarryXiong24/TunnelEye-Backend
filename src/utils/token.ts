@@ -1,25 +1,30 @@
 import { Context, Next } from 'koa';
 import jwt from 'jsonwebtoken';
 
-const secretKey = 'secretKey';
+export const secretKey = 'secretKey';
+
+export const whiteList = ['/', '/login', '/captcha'];
 
 // 生成token
 export const generateToken = (payload: Record<string, any>) => {
   const token = jwt.sign(payload, secretKey, {
     expiresIn: 60 * 60,
   });
-  return token;
+  return 'Bearer ' + token;
 };
 
-// 验证token
-export const verifyToken = (ctx: Context, next: Next) => {
-  const token = ctx.headers.authorization;
-  jwt.verify(token, secretKey, (err: any, decoded: any) => {
-    if (err) {
-      console.log('verify token error', err);
-      return (ctx.body = { code: '404', msg: 'token无效' });
+// 自定义的权限错误处理, 当然这是特殊的业务需求
+export async function verifyToken(ctx: Context, next: Next) {
+  try {
+    await next();
+  } catch (err) {
+    // 由 koa-jwt 抛出的错误
+    if (err.status === 401) {
+      // 强制修改网络状态, 在接口中返回业务类型状态码(根据需求)
+      ctx.status = 200;
+      ctx.body = { code: 0, msg: '无效 token' };
+    } else {
+      throw err;
     }
-    console.log('verify token decoded', decoded);
-    next();
-  });
-};
+  }
+}
