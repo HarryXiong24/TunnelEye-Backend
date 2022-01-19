@@ -1,2 +1,41 @@
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+*.swp
+*.local
+
+pids
+logs
+results
+tmp
+
+# Coverage reports
+coverage
+
+# Dependency directory
 node_modules
+bower_components
+
+# Editors
+.idea
+*.iml
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Ignore built ts files
 dist
+dist-ssr
+dist/**/*
+
+# ignore yarn.lock
+yarn-error.log
+yarn.lock
+package-lock.json
+

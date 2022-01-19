@@ -16,18 +16,17 @@ import connect from './sql/connect';
 import router from './routes';
 
 const app = new Koa();
-const isDevMode = process.env.NODE_ENV === 'production' ? false : true;
 
-if (!isDevMode) {
-  app.use(compress());
-}
+app.use(compress());
 app.use(cors());
 app.use(bodyParser());
+// 网络安全
 app.use(helmet());
 // 解析 json 的中间件
 app.use(json());
 // log 记录的中间件
 app.use(logger());
+// 处理静态资源
 app.use(KoaStatic(__dirname + '/public'));
 
 // SQL
