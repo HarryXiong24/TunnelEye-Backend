@@ -30,7 +30,9 @@ app.use(logger());
 app.use(KoaStatic(__dirname + '/public'));
 
 // SQL
-connect(options);
+const mysql = connect(options);
+// 将 mysql 对象注册到 context 中
+app.context.mysql = mysql;
 
 // 这个中间件要放在'koa-jwt'的前面
 app.use(verifyToken);
@@ -42,6 +44,7 @@ app.use(
   }).unless({ path: whiteList })
 );
 
+// 注册路由
 app.use(router.routes());
 app.use(router.allowedMethods());
 
