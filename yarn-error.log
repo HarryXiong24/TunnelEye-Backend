@@ -1,5 +1,5 @@
 Arguments: 
-  E:\VScode\Node.js\node.exe D:\编程\WebDevelopment\Workspace\node_global\node_modules\yarn\bin\yarn.js add koa-compression
+  E:\VScode\Node.js\node.exe D:\编程\WebDevelopment\Workspace\node_global\node_modules\yarn\bin\yarn.js add @types/koa-logger @types/koa-json @types/koa-onerror --dev
 
 PATH: 
   C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Microsoft MPI\Bin\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;E:\Microsoft Visual Studio\Python36_64\Scripts;E:\Microsoft Visual Studio\Python36_64;"E:\Java201906\JDK8.0.1\bin;";E:\Java\eclipse\jre\bin\javaw.exe;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\110\Tools\Binn\;"E:\Java201906\JDK8.0.1\jre\bin;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;E:\VScode\Node.js\";E:\VScode\Node.js;D:\编程\WebDevelopment\Workspace\node_global;D;\编程\WebDevelopment\Workspace\node_cache;E;\MongoDB\bin;%QUARTUS_ROOTDIR%\bin;E:\VScode\Yarn\bin\;E:\VScode\Yarn\bin;E:\MySQL\mysql-8.0.22-winx64\bin;E:\Java201906\JDK8.0.1\jre1.8.0_211\bin;E:\Android ABD\platform-tools;E:\VScode\Node.js\;E:\Git\Git\cmd;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Lenovo\AppData\Local\Programs\Python\Python38\Scripts\;C:\Users\Lenovo\AppData\Local\Programs\Python\Python38\;C:\Users\Lenovo\AppData\Local\Microsoft\WindowsApps;E:\Microsoft Visual Studio\Python36_64;%PyCharm Community Edition%;E:\VScode\Microsoft VS Code\bin;E:\VScode\Node.js;D:\编程\WebDevelopment\Workspace\node_global;D:\编程\WebDevelopment\Workspace\node_cache;C:\Users\Lenovo\AppData\Local\Yarn\bin;E:\IntelliJ IDEA\IntelliJ IDEA 2020.2\bin;;E:\Android ABD\platform-tools;C:\Users\Lenovo\AppData\Roaming\npm;C:\Users\Lenovo\AppData\Local\Microsoft\WindowsApps;
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/koa-compression: Not found
+  Error: https://registry.yarnpkg.com/@types%2fkoa-onerror: Not found
       at Request.params.callback [as _callback] (D:\编程\WebDevelopment\Workspace\node_global\node_modules\yarn\lib\cli.js:66988:18)
       at Request.self.callback (D:\编程\WebDevelopment\Workspace\node_global\node_modules\yarn\lib\cli.js:140662:22)
       at Request.emit (events.js:315:20)
@@ -51,7 +51,11 @@ npm manifest:
       "jsonwebtoken": "^8.5.1",
       "koa": "^2.13.0",
       "koa-bodyparser": "^4.3.0",
+      "koa-compress": "^5.1.0",
       "koa-helmet": "^6.1.0",
+      "koa-json": "^2.0.2",
+      "koa-logger": "^3.2.1",
+      "koa-onerror": "^4.1.0",
       "koa-static": "^5.0.0",
       "koa2-cors": "^2.0.6",
       "mysql": "^2.18.1",
@@ -61,6 +65,7 @@ npm manifest:
     "devDependencies": {
       "@types/jest": "^27.4.0",
       "@types/koa-bodyparser": "^4.3.0",
+      "@types/koa-compress": "^4.0.3",
       "@types/koa-helmet": "^6.0.4",
       "@types/koa-static": "^4.0.2",
       "@types/koa2-cors": "^2.0.2",
@@ -1002,6 +1007,14 @@ Lockfile:
     dependencies:
       "@types/koa" "*"
   
+  "@types/koa-compress@^4.0.3":
+    version "4.0.3"
+    resolved "https://registry.yarnpkg.com/@types/koa-compress/-/koa-compress-4.0.3.tgz#62060c6a1feda55c41e294f3abc4e089c8e322b7"
+    integrity sha512-nJSII/tOSvYCwk3yDEBJLHd8ctkt5CQFZ0j8ZBnHZ2x0hg24z9H1i38lWXA/5z0Ix0uitMW1jov+kVbQI1aNPQ==
+    dependencies:
+      "@types/koa" "*"
+      "@types/node" "*"
+  
   "@types/koa-helmet@^6.0.4":
     version "6.0.4"
     resolved "https://registry.yarnpkg.com/@types/koa-helmet/-/koa-helmet-6.0.4.tgz#d908fff8fe25e1d50765f107c1fcd9b89e8a54e3"
@@ -1645,6 +1658,11 @@ Lockfile:
     resolved "https://registry.npm.taobao.org/bytes/download/bytes-3.1.0.tgz#f6cf7933a360e0588fa9fde85651cdc7f805d1f6"
     integrity sha1-9s95M6Ng4FiPqf3oVlHNx/gF0fY=
   
+  bytes@^3.0.0, bytes@^3.1.0:
+    version "3.1.1"
+    resolved "https://registry.yarnpkg.com/bytes/-/bytes-3.1.1.tgz#3f018291cb4cbad9accb6e6970bca9c8889e879a"
+    integrity sha512-dWe4nWO/ruEOY7HkUJ5gFt1DCFV9zPRoJr8pV0/ASQermOZjtq8jMjOprC0Kd10GLN+l7xaUPvxzJFWtxGu8Fg==
+  
   cache-content-type@^1.0.0:
     version "1.0.1"
     resolved "https://registry.npm.taobao.org/cache-content-type/download/cache-content-type-1.0.1.tgz#035cde2b08ee2129f4a8315ea8f00a00dba1453c"
@@ -1906,6 +1924,13 @@ Lockfile:
     version "1.3.0"
     resolved "https://registry.yarnpkg.com/component-emitter/-/component-emitter-1.3.0.tgz#16e4070fba8ae29b679f2215853ee181ab2eabc0"
     integrity sha512-Rd3se6QB+sO1TwqZjscQrurpEPIfO0/yYnSin6Q/rD3mOutHvUrCAhJub3r90uNb+SESBuE0QYoB90YdfatsRg==
+  
+  compressible@^2.0.0:
+    version "2.0.18"
+    resolved "https://registry.yarnpkg.com/compressible/-/compressible-2.0.18.tgz#af53cca6b070d4c3c0750fbd77286a6d7cc46fba"
+    integrity sha512-AF3r7P5dWxL8MxyITRMlORQNaOA2IkAFaTr4k7BUumjPtRpGDTZpl0Pb1XCO6JeDCBdp126Cgs9sMxqSjgYyRg==
+    dependencies:
+      mime-db ">= 1.43.0 < 2"
   
   concat-map@0.0.1:
     version "0.0.1"
@@ -3354,6 +3379,17 @@ Lockfile:
       statuses ">= 1.5.0 < 2"
       toidentifier "1.0.0"
   
+  http-errors@^1.8.0:
+    version "1.8.1"
+    resolved "https://registry.yarnpkg.com/http-errors/-/http-errors-1.8.1.tgz#7c3f28577cbc8a207388455dbd62295ed07bd68c"
+    integrity sha512-Kpk9Sm7NmI+RHhnj6OIWDI1d6fIoFAtFt9RLaTMRlg/8w49juAStsrBgp0Dp4OdxdVbRIeKhtCUvoi/RuAhO4g==
+    dependencies:
+      depd "~1.1.2"
+      inherits "2.0.4"
+      setprototypeof "1.2.0"
+      statuses ">= 1.5.0 < 2"
+      toidentifier "1.0.1"
+  
   http-errors@~1.6.2:
     version "1.6.3"
     resolved "https://registry.yarnpkg.com/http-errors/-/http-errors-1.6.3.tgz#8b55680bb4be283a0b5bf4ea2e38580be1d9320d"
@@ -3401,6 +3437,11 @@ Lockfile:
     version "2.1.0"
     resolved "https://registry.yarnpkg.com/human-signals/-/human-signals-2.1.0.tgz#dc91fcba42e4d06e4abaed33b3e7a3c02f514ea0"
     integrity sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==
+  
+  humanize-number@0.0.2:
+    version "0.0.2"
+    resolved "https://registry.yarnpkg.com/humanize-number/-/humanize-number-0.0.2.tgz#11c0af6a471643633588588048f1799541489c18"
+    integrity sha1-EcCvakcWQ2M1iFiASPF5lUFInBg=
   
   iconv-lite@0.4.24, iconv-lite@^0.4.24, iconv-lite@^0.4.4:
     version "0.4.24"
@@ -4198,7 +4239,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/json-stable-stringify-without-jsonify/-/json-stable-stringify-without-jsonify-1.0.1.tgz#9db7b59496ad3f3cfef30a75142d2d930ad72651"
     integrity sha1-nbe1lJatPzz+8wp1FC0tkwrXJlE=
   
-  json-stringify-safe@^5.0.1:
+  json-stringify-safe@5, json-stringify-safe@^5.0.1:
     version "5.0.1"
     resolved "https://registry.yarnpkg.com/json-stringify-safe/-/json-stringify-safe-5.0.1.tgz#1296a2d58fd45f19a0f6ce01d65701e2c735b6eb"
     integrity sha1-Epai1Y/UXxmg9s4B1lcB4sc1tus=
@@ -4306,6 +4347,17 @@ Lockfile:
     resolved "https://registry.npm.taobao.org/koa-compose/download/koa-compose-4.1.0.tgz?cache=0&sync_timestamp=1599805339337&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fkoa-compose%2Fdownload%2Fkoa-compose-4.1.0.tgz#507306b9371901db41121c812e923d0d67d3e877"
     integrity sha1-UHMGuTcZAdtBEhyBLpI9DWfT6Hc=
   
+  koa-compress@^5.1.0:
+    version "5.1.0"
+    resolved "https://registry.yarnpkg.com/koa-compress/-/koa-compress-5.1.0.tgz#7b9fe24f4c1b28d9cae90864597da472c2fcf701"
+    integrity sha512-G3Ppo9jrUwlchp6qdoRgQNMiGZtM0TAHkxRZQ7EoVvIG8E47J4nAsMJxXHAUQ+0oc7t0MDxSdONWTFcbzX7/Bg==
+    dependencies:
+      bytes "^3.0.0"
+      compressible "^2.0.0"
+      http-errors "^1.8.0"
+      koa-is-json "^1.0.0"
+      statuses "^2.0.1"
+  
   koa-convert@^1.2.0:
     version "1.2.0"
     resolved "https://registry.npm.taobao.org/koa-convert/download/koa-convert-1.2.0.tgz#da40875df49de0539098d1700b50820cebcd21d0"
@@ -4320,6 +4372,37 @@ Lockfile:
     integrity sha512-WymEv4qo/7ghh15t+1qTjvZBmZkmVlTtfnpe5oxn8m8mO2Q2rKJ3eMvWuQGW/6yVxN9+hQ75evuWcg3XBbFLbg==
     dependencies:
       helmet "^4.4.1"
+  
+  koa-is-json@1, koa-is-json@^1.0.0:
+    version "1.0.0"
+    resolved "https://registry.yarnpkg.com/koa-is-json/-/koa-is-json-1.0.0.tgz#273c07edcdcb8df6a2c1ab7d59ee76491451ec14"
+    integrity sha1-JzwH7c3Ljfaiwat9We52SRRR7BQ=
+  
+  koa-json@^2.0.2:
+    version "2.0.2"
+    resolved "https://registry.yarnpkg.com/koa-json/-/koa-json-2.0.2.tgz#36af14e6ea1f5d646d7c44a285701c6f85a4fde4"
+    integrity sha1-Nq8U5uofXWRtfESihXAcb4Wk/eQ=
+    dependencies:
+      koa-is-json "1"
+      streaming-json-stringify "3"
+  
+  koa-logger@^3.2.1:
+    version "3.2.1"
+    resolved "https://registry.yarnpkg.com/koa-logger/-/koa-logger-3.2.1.tgz#ab9db879526db3837cc9ce4fd983c025b1689f22"
+    integrity sha512-MjlznhLLKy9+kG8nAXKJLM0/ClsQp/Or2vI3a5rbSQmgl8IJBQO0KI5FA70BvW+hqjtxjp49SpH2E7okS6NmHg==
+    dependencies:
+      bytes "^3.1.0"
+      chalk "^2.4.2"
+      humanize-number "0.0.2"
+      passthrough-counter "^1.0.0"
+  
+  koa-onerror@^4.1.0:
+    version "4.1.0"
+    resolved "https://registry.yarnpkg.com/koa-onerror/-/koa-onerror-4.1.0.tgz#7949c7651941e67b11813bf1fad03c2d34470b1c"
+    integrity sha512-UDvOkkXiyVtlhRIvo9wbqKG/pTiiVE5x2uIFpG5e6OmBawxBSURG/PeFa6e6UZjjxinXde3BmPWVSIVePMG6TA==
+    dependencies:
+      escape-html "^1.0.3"
+      stream-wormhole "^1.1.0"
   
   koa-send@^5.0.0:
     version "5.0.1"
@@ -4618,7 +4701,7 @@ Lockfile:
     resolved "https://registry.npm.taobao.org/mime-db/download/mime-db-1.44.0.tgz?cache=0&sync_timestamp=1600831210195&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fmime-db%2Fdownload%2Fmime-db-1.44.0.tgz#fa11c5eb0aca1334b4233cb4d52f10c5a6272f92"
     integrity sha1-+hHF6wrKEzS0Izy01S8QxaYnL5I=
   
-  mime-db@1.51.0:
+  mime-db@1.51.0, "mime-db@>= 1.43.0 < 2":
     version "1.51.0"
     resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.51.0.tgz#d9ff62451859b18342d960850dc3cfb77e63fb0c"
     integrity sha512-5y8A56jg7XVQx2mbv1lu49NR4dokRnhZYTtL+KGfaa27uq4pSTXkwQkFJl4pkRMyNFz/EtYDSkiiEHx3F7UN6g==
@@ -5048,6 +5131,11 @@ Lockfile:
     version "1.3.3"
     resolved "https://registry.npm.taobao.org/parseurl/download/parseurl-1.3.3.tgz?cache=0&sync_timestamp=1599054201722&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fparseurl%2Fdownload%2Fparseurl-1.3.3.tgz#9da19e7bee8d12dff0513ed5b76957793bc2e8d4"
     integrity sha1-naGee+6NEt/wUT7Vt2lXeTvC6NQ=
+  
+  passthrough-counter@^1.0.0:
+    version "1.0.0"
+    resolved "https://registry.yarnpkg.com/passthrough-counter/-/passthrough-counter-1.0.0.tgz#1967d9e66da572b5c023c787db112a387ab166fa"
+    integrity sha1-GWfZ5m2lcrXAI8eH2xEqOHqxZvo=
   
   path-exists@^3.0.0:
     version "3.0.0"
@@ -5861,6 +5949,24 @@ Lockfile:
     resolved "https://registry.npm.taobao.org/statuses/download/statuses-1.5.0.tgz#161c7dac177659fd9811f43771fa99381478628c"
     integrity sha1-Fhx9rBd2Wf2YEfQ3cfqZOBR4Yow=
   
+  statuses@^2.0.1:
+    version "2.0.1"
+    resolved "https://registry.yarnpkg.com/statuses/-/statuses-2.0.1.tgz#55cb000ccf1d48728bd23c685a063998cf1a1b63"
+    integrity sha512-RwNA9Z/7PrK06rYLIzFMlaF+l73iwpzsqRIFgbMLbTcLD6cOao82TaWefPXQvB2fOC4AjuYSEndS7N/mTCbkdQ==
+  
+  stream-wormhole@^1.1.0:
+    version "1.1.0"
+    resolved "https://registry.yarnpkg.com/stream-wormhole/-/stream-wormhole-1.1.0.tgz#300aff46ced553cfec642a05251885417693c33d"
+    integrity sha512-gHFfL3px0Kctd6Po0M8TzEvt3De/xu6cnRrjlfYNhwbhLPLwigI2t1nc6jrzNuaYg5C4YF78PPFuQPzRiqn9ew==
+  
+  streaming-json-stringify@3:
+    version "3.1.0"
+    resolved "https://registry.yarnpkg.com/streaming-json-stringify/-/streaming-json-stringify-3.1.0.tgz#80200437a993cc39c4fe00263b7b3b903ac87af5"
+    integrity sha1-gCAEN6mTzDnE/gAmO3s7kDrIevU=
+    dependencies:
+      json-stringify-safe "5"
+      readable-stream "2"
+  
   string-length@^4.0.1:
     version "4.0.2"
     resolved "https://registry.yarnpkg.com/string-length/-/string-length-4.0.2.tgz#a8a8dc7bd5c1a82b9b3c8b87e125f66871b6e57a"
@@ -6177,6 +6283,11 @@ Lockfile:
     version "1.0.0"
     resolved "https://registry.npm.taobao.org/toidentifier/download/toidentifier-1.0.0.tgz#7e1be3470f1e77948bc43d94a3c8f4d7752ba553"
     integrity sha1-fhvjRw8ed5SLxD2Uo8j013UrpVM=
+  
+  toidentifier@1.0.1:
+    version "1.0.1"
+    resolved "https://registry.yarnpkg.com/toidentifier/-/toidentifier-1.0.1.tgz#3be34321a88a820ed1bd80dfaa33e479fbb8dd35"
+    integrity sha512-o5sSPKEkg/DIQNmH43V0/uerLrpzVedkUh8tGNvaeXpfpuwjKenlSox/2O/BTlZUtEe+JG7s5YhEz608PlAHRA==
   
   touch@^3.1.0:
     version "3.1.0"
