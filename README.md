@@ -1,33 +1,55 @@
-# koa-ts-starter
+<h1 align="center">Welcome to koa-ts-starter 👋</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+  <a href="https://github.com/HarryXiong24/koa-ts-starter/blob/master/README.md" target="_blank">
+    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
+  </a>
+  <a href="https://github.com/HarryXiong24/koa-ts-starter/blob/master/LICENSE" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  </a>
+</p>
 
-## Setup
+> This is a starter project for koa projects using typescript.
 
-``` bash
-  yarn
+### 🏠 [Homepage](https://github.com/HarryXiong24/koa-ts-starter)
+
+## Getting started
+
+## Install
+
+```sh
+yarn install
 ```
 
-## Development
+## Usage
 
-``` bash
-  yarn dev
+```sh
+// develop
+yarn dev
+// build
+yarn build
+// lint
+yarn lint
 ```
 
-## Build
+## Run tests
 
-``` bash
-  yarn build
+```sh
+yarn test
 ```
 
-## Production
+## Author
 
-### Start
+👤 **Harry Xiong**
 
-``` bash
-  yarn start
-```
+- Website: <https://www.harryxiong24.com>
+- Github: [@harryxiong24](https://github.com/harryxiong24)
 
-### Stop
+## Show your support
 
-``` bash
-  yarn stop
-```
+Give a ⭐️ if this project helped you!
+
+## 📝 License
+
+Copyright © 2022 [Harry Xiong](https://github.com/harryxiong24).<br />
+This project is [MIT](https://github.com/HarryXiong24/koa-ts-starter/blob/master/LICENSE) licensed.

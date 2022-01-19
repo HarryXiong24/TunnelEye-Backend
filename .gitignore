@@ -21,6 +21,11 @@ coverage
 node_modules
 bower_components
 
+# ignore yarn.lock
+yarn-error.log
+yarn.lock
+package-lock.json
+
 # Editors
 .idea
 *.iml
@@ -34,8 +39,4 @@ dist
 dist-ssr
 dist/**/*
 
-# ignore yarn.lock
-yarn-error.log
-yarn.lock
-package-lock.json
 

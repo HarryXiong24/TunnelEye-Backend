@@ -1,5 +1,11 @@
 {
   "name": "koa-ts-starter",
+  "description": "This is a starter project for koa projects using typescript.",
+  "author": {
+    "name": "Harry Xiong",
+    "email": "harryxiong24@gmail.com"
+  },
+  "repository": "https://github.com/HarryXiong24/koa-ts-starter",
   "version": "1.0.0",
   "main": "index.ts",
   "license": "MIT",
