@@ -6,6 +6,7 @@ import compress from 'koa-compress';
 import KoaStatic from 'koa-static';
 import logger from 'koa-logger';
 import json from 'koa-json';
+import onerror from 'koa-onerror';
 // token
 import jwt from 'koa-jwt';
 import { secretKey, verifyToken, whiteList } from './utils/token';
@@ -28,6 +29,8 @@ app.use(json());
 app.use(logger());
 // 处理静态资源
 app.use(KoaStatic(__dirname + '/public'));
+// 告诉 Koa-onerror 我们需要捕获所以服务端实例对象的错误
+onerror(app);
 
 // SQL
 const mysql = connect(options);
@@ -47,5 +50,14 @@ app.use(
 // 注册路由
 app.use(router.routes());
 app.use(router.allowedMethods());
+
+// 处理错误
+app.use(async (ctx, next) => {
+  try {
+    await next();
+  } catch (err) {
+    ctx.body = err.message;
+  }
+});
 
 export default app;
