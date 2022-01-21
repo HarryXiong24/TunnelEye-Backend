@@ -1,11 +1,11 @@
 {
-  "name": "koa-ts-starter",
-  "description": "This is a starter project for koa projects using typescript.",
+  "name": "tunnel-eye-backend",
+  "description": "This is Tunnel-Eye Backend project built by koa and typescript.",
   "author": {
     "name": "Harry Xiong",
     "email": "harryxiong24@gmail.com"
   },
-  "repository": "https://github.com/HarryXiong24/koa-ts-starter",
+  "repository": "https://github.com/HarryXiong24/TunnelEye-Backend",
   "version": "1.0.0",
   "main": "server.ts",
   "license": "MIT",
