@@ -55,7 +55,7 @@ app.use(router.allowedMethods());
 app.use(async (ctx, next) => {
   try {
     await next();
-  } catch (err) {
+  } catch (err: any) {
     ctx.body = err.message;
   }
 });

@@ -5,9 +5,12 @@ module.exports = {
     },
   },
   moduleFileExtensions: ['ts', 'js'],
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1',
+  },
   transform: {
     '^.+\\.(ts|tsx)$': 'ts-jest',
   },
-  testMatch: ['**/tests/**/*.test.(ts|js)'],
+  testMatch: ['**/test/**/*.test.(ts|js)'],
   testEnvironment: 'node',
 };

@@ -6,7 +6,7 @@ module.exports = {
   apps: [
     {
       name,
-      script: resolve(__dirname, './dist/index.js'),
+      script: resolve(__dirname, './dist/server.js'),
       instances: cpus().length,
       watch: true,
       env_production: {

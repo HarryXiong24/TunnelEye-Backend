@@ -1,6 +1,6 @@
 import { Context } from 'koa';
-import createCaptcha from '../utils/captcha';
-import { generateToken } from '../utils/token';
+import createCaptcha from '@/utils/captcha';
+import { generateToken } from '@/utils/token';
 
 export const getWelcome = (ctx: Context) => {
   ctx.status = 200;

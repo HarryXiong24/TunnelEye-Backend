@@ -7,11 +7,11 @@
   },
   "repository": "https://github.com/HarryXiong24/koa-ts-starter",
   "version": "1.0.0",
-  "main": "index.ts",
+  "main": "server.ts",
   "license": "MIT",
   "scripts": {
     "dev": "nodemon",
-    "build": "rm -rf dist && tsc",
+    "build": "tsc",
     "start": "pm2 start ecosystem.config.js --env production",
     "stop": "pm2 stop ecosystem.config.js",
     "test": "jest --forceExit --coverage --verbose",

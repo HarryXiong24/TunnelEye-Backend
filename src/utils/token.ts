@@ -17,7 +17,7 @@ export const generateToken = (payload: Record<string, any>) => {
 export async function verifyToken(ctx: Context, next: Next) {
   try {
     await next();
-  } catch (err) {
+  } catch (err: any) {
     // 由 koa-jwt 抛出的错误
     if (err.status === 401) {
       // 强制修改网络状态, 在接口中返回业务类型状态码(根据需求)
