@@ -1,6 +1,10 @@
 import { Context } from 'koa';
 import createCaptcha from '@/utils/captcha';
 import { generateToken } from '@/utils/token';
+import SQLQuery from '@/sql/query';
+import { CaptchaObj } from 'svg-captcha';
+
+let code: CaptchaObj = { text: '', data: '' };
 
 export const getWelcome = (ctx: Context) => {
   ctx.status = 200;
@@ -8,22 +12,48 @@ export const getWelcome = (ctx: Context) => {
 };
 
 export const getCaptcha = (ctx: Context) => {
-  const code = createCaptcha();
+  code = createCaptcha();
   ctx.status = 200;
   ctx.type = 'svg';
   ctx.body = code.data;
 };
 
-export const doLogin = (ctx: Context) => {
-  const username = ctx.request.body.username;
-  const password = ctx.request.body.password;
-  const token = generateToken({ username: username, password: password });
-  ctx.body = {
-    code: 200,
-    msg: '请求成功',
-    data: {
-      msg: '登录成功',
-      token,
-    },
-  };
+export const doLogin = async (ctx: Context) => {
+  const username = ctx.request.body.username as string;
+  const password = ctx.request.body.password as string;
+  const captcha = (ctx.request.body.captcha as string).toLowerCase();
+  let flag = 0;
+
+  if (captcha !== code.text.toLowerCase()) {
+    ctx.body = { msg: '验证码错误', success: false };
+    return;
+  }
+
+  try {
+    const sql = 'select * from userinfo';
+    const data = (await SQLQuery(ctx.mysql, sql)) as Array<Record<string, any>>;
+    // console.log(data);
+    data.forEach((value) => {
+      console.log(value.loginname, value.pass, value.loginname === username && value.pass === password);
+      if (value.loginname === username && value.pass === password) {
+        flag = 1;
+        const token = generateToken({ username: username, password: password });
+        ctx.body = {
+          msg: '登陆成功',
+          success: true,
+          token,
+          user: value,
+        };
+      }
+    });
+
+    if (flag === 0) {
+      ctx.body = {
+        msg: '用户名或密码错误',
+        success: false,
+      };
+    }
+  } catch (err) {
+    console.log(err);
+  }
 };
