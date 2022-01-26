@@ -24,11 +24,13 @@ yarn install
 ## Usage
 
 ```sh
-// develop
+# develop
 yarn dev
-// build
+
+# build
 yarn build
-// lint
+
+# lint
 yarn lint
 ```
 
