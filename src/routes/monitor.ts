@@ -5,7 +5,7 @@ import * as monitor from '@/controllers/monitor';
 
 const router = new Router();
 
-router.get('/infos', monitor.getInfos);
-router.get('/info', monitor.getInfoDetail);
+router.get('/infos', monitor.getSensors);
+router.get('/info', monitor.getSensorDetail);
 
 export default router;
