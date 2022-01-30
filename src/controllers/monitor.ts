@@ -21,7 +21,7 @@ export const getSensors = async (ctx: Context) => {
     data.forEach((value) => {
       const {
         importtime: importTime,
-        sensoradd: sensorAdd,
+        sensoraddress: sensorAdd,
         sensorid: sensorId,
         sensorno: sensorNo,
         sensortype: sensorType,
@@ -43,31 +43,32 @@ export const getSensors = async (ctx: Context) => {
 };
 
 export const getSensorDetail = async (ctx: Context) => {
-  const params = Number(ctx.query.infoId);
+  const nodeId = Number(ctx.query.nodeId);
+  const sensorAdd = Number(ctx.query.sensorAdd);
 
   try {
-    const sql = `select * from information where infoid = ${params}`;
+    const sql = `select * from sensors where nodeid = ${nodeId} and sensoraddress = ${sensorAdd}`;
     const data = (await SQLQuery(ctx.mysql, sql)) as Array<Record<string, any>>;
-    const {
-      infoid: infoId,
-      infotype: infoType,
-      infotitle: infoTitle,
-      infosource: infoSource,
-      infoauthor: infoAuthor,
-      infocontent: infoContent,
-      infotime: infoTime,
-      level,
-    } = data[0];
-    ctx.body = {
-      infoId,
-      infoType,
-      infoTitle,
-      infoSource,
-      infoAuthor,
-      infoContent,
-      infoTime,
-      level,
-    };
+    const result: Sensor[] = [];
+    data.forEach((value) => {
+      const {
+        importtime: importTime,
+        sensoraddress: sensorAdd,
+        sensorid: sensorId,
+        sensorno: sensorNo,
+        sensortype: sensorType,
+        setupadd: setUpAdd,
+      } = value;
+      result.push({
+        importTime,
+        sensorAdd,
+        sensorId,
+        sensorNo,
+        sensorType,
+        setUpAdd,
+      });
+    });
+    ctx.body = result;
   } catch (err) {
     console.log(err);
   }
