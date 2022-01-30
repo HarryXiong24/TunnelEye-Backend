@@ -7,5 +7,6 @@ const router = new Router();
 
 router.get('/infos', monitor.getSensors);
 router.get('/info', monitor.getSensorDetail);
+router.get('/data', monitor.getSensorData);
 
 export default router;
