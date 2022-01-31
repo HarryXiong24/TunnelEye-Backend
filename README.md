@@ -18,6 +18,7 @@
 ## Install
 
 ```sh
+# add dependencies
 yarn install
 ```
 
