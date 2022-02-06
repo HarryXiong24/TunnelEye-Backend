@@ -8,7 +8,7 @@ import worker from './worker';
 const router = new Router();
 
 router.use('', login.routes(), login.allowedMethods());
-router.use('/node', position.routes(), position.allowedMethods());
+router.use('', position.routes(), position.allowedMethods());
 router.use('', message.routes(), message.allowedMethods());
 router.use('/sensor', monitor.routes(), monitor.allowedMethods());
 router.use('/PersonInfo', worker.routes(), worker.allowedMethods());
