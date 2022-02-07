@@ -7,5 +7,6 @@ const router = new Router();
 
 router.get('/infos', message.getInfos);
 router.get('/info', message.getInfoDetail);
+router.get('/ip', message.getIP);
 
 export default router;

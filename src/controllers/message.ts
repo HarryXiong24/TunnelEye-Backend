@@ -1,6 +1,7 @@
 import { Context } from 'koa';
 import SQLQuery from '@/sql/query';
 import paginate from '@/utils/pagination';
+import api from '@/api/ip';
 
 interface Info {
   infoAuthor: string;
@@ -79,6 +80,21 @@ export const getInfoDetail = async (ctx: Context) => {
       infoTime,
       level,
     };
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const getIP = async (ctx: Context) => {
+  try {
+    const response = await api.getIP({
+      key: 'SL5BZ-UEDCO-OLDWE-SAZNW-NFDVK-PWFK2',
+    });
+    const data = response.data;
+    const ip = data?.result?.ip;
+    const cityInfo = `${data?.result?.ad_info?.nation}-${data?.result?.ad_info?.province}-${data?.result?.ad_info?.city}`;
+
+    ctx.body = { cityInfo, ip };
   } catch (err) {
     console.log(err);
   }
