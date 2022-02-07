@@ -118,3 +118,21 @@ export const getDrawingInfo = async (ctx: Context) => {
     console.log(err);
   }
 };
+
+export const getSysId = async (ctx: Context) => {
+  const nodeId = ctx.query.nodeId as string;
+
+  try {
+    const sql = `select * from uwbsys where nodeid = ${nodeId}`;
+    const data = (await SQLQuery(ctx.mysql, sql)) as Array<Record<string, any>>;
+    const result: number[] = [];
+
+    data.forEach((value) => {
+      result.push(value.sysid);
+    });
+
+    ctx.body = result;
+  } catch (err) {
+    console.log(err);
+  }
+};
