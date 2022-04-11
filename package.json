@@ -14,6 +14,7 @@
     "dev_nodemon": "nodemon",
     "build": "npm-run-all reset compile",
     "start": "pm2 start dist/server.js --watch",
+    "stop": "pm2 stop dist/server.js",
     "reset": "rimraf dist/*",
     "compile": "tsc",
     "test": "jest --forceExit --coverage --verbose",
