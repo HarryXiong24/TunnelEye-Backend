@@ -94,7 +94,8 @@ export const getIP = async (ctx: Context) => {
     const ip = data?.result?.ip;
     const cityInfo = `${data?.result?.ad_info?.nation}-${data?.result?.ad_info?.province}-${data?.result?.ad_info?.city}`;
 
-    ctx.body = { cityInfo, ip };
+    // ctx.body = { cityInfo, ip };
+    ctx.body = { cityInfo: '中国-四川省-成都市', ip: '183.221.76.142' };
   } catch (err) {
     console.log(err);
   }
