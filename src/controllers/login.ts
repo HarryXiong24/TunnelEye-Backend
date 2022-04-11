@@ -1,8 +1,8 @@
 import { Context } from 'koa';
-import createCaptcha from '@/utils/captcha';
-import { generateToken } from '@/utils/token';
+import createCaptcha from '../utils/captcha';
+import { generateToken } from '../utils/token';
 import { CaptchaObj } from 'svg-captcha';
-import SQLQuery from '@/sql/query';
+import SQLQuery from '../sql/query';
 
 let code: CaptchaObj = { text: '', data: '' };
 

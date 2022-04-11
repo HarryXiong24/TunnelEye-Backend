@@ -1,5 +1,5 @@
 import { Context } from 'koa';
-import SQLQuery from '@/sql/query';
+import SQLQuery from '../sql/query';
 
 interface Node {
   devAddress: string;

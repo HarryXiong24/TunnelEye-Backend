@@ -5,7 +5,7 @@ export const options: string | mysql.ConnectionConfig = {
   // 可选，默认式3306
   port: 3306,
   user: 'root',
-  password: 'root',
+  password: '',
   database: 'uwb',
 };
 

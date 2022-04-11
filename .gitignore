@@ -40,4 +40,6 @@ dist
 dist-ssr
 dist/**/*
 
+src/sql/config.ts
+
 

@@ -1,7 +1,7 @@
 import Router from '@koa/router';
 
 // Controllers (route handlers)
-import * as message from '@/controllers/message';
+import * as message from '../controllers/message';
 
 const router = new Router();
 

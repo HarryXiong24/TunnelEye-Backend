@@ -1,7 +1,7 @@
 import { Context } from 'koa';
-import SQLQuery from '@/sql/query';
-import paginate from '@/utils/pagination';
-import api from '@/api/ip';
+import SQLQuery from '../sql/query';
+import paginate from '../utils/pagination';
+import api from '../api/ip';
 
 interface Info {
   infoAuthor: string;

@@ -1,6 +1,6 @@
 import { Context } from 'koa';
 import moment from 'moment';
-import SQLQuery from '@/sql/query';
+import SQLQuery from '../sql/query';
 
 interface SensorValue {
   measureTime: string;

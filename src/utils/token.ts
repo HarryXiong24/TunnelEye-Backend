@@ -3,7 +3,8 @@ import jwt from 'jsonwebtoken';
 
 export const secretKey = 'secretKey';
 
-export const whiteList = ['/', '/login', '/captcha'];
+// 不需要 token 验证的白名单
+export const whiteList = ['/', '/login', '/captcha', '/ip'];
 
 // 生成token
 export const generateToken = (payload: Record<string, any>) => {
